@@ -1,0 +1,98 @@
+﻿@page "/asignaturaForm"
+@page "/asignaturaForm/{Id:int}"
+
+@using Data
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager Navigationmanager;
+
+<h3><span class="oi oi-clipboard" aria-hidden="true"></span>&nbsp;&nbsp;Formulario de la Asignatura</h3>
+
+<EditForm Model="@oAsignatura">
+    <div class="container-fluid mt-3">
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Nombre</label>
+            <div class="col-sm-9">
+                <InputText class="form-control form-control-sm" @bind-Value="@oAsignatura.Nombre"></InputText>
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Curso</label>
+            <div class="col-sm-9">
+                <InputNumber class="form-control form-control-sm" @bind-Value="@oAsignatura.Curso"></InputNumber>
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Profesor</label>
+            <div class="col-sm-9">
+                <CustomInputSelect class="form-control form-control-sm" @onchange="(()=>AsignarProfesor(oAsignatura.ProfesorId))" @bind-Value="@oAsignatura.ProfesorId">
+                    <option value="0">-- Seleccione un professor --</option>
+                    @foreach (var profesor in oProfesores)
+                    {
+                        if (profesor.Id.Equals(@oAsignatura.ProfesorId.ToString()))
+                        {
+                            <option value="@profesor.Id" selected>@String.Concat(profesor.Nombre, " ", profesor.Apellidos)</option>
+                        }
+                        else
+                        {
+                            <option value="@profesor.Id">@String.Concat(profesor.Nombre, " ", profesor.Apellidos)</option>
+                        }
+                    }
+                </CustomInputSelect>
+            </div>
+        </div>
+
+        <div class="form-group row mb-1 mt-2">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" @onclick="Save">Guardar</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    Asignatura oAsignatura = new Asignatura();
+    object oRespuesta = new object();
+    Asignatura oRespuestaAsignatura = new Asignatura();
+    public string Url = "/Asignaturas";
+
+
+    public IEnumerable<Profesor> oProfesores = new List<Profesor>();
+    public string UrlProfesores = "/Profesores";
+
+    private async Task Save()
+    {
+        if (Id != 0)
+        {
+            var response = await Http.PutAsJsonAsync<Asignatura>(Url, oAsignatura);
+            oRespuesta = response.Content.ReadFromJsonAsync<object>().Result;
+        }
+        else
+        {
+            var response = await Http.PostAsJsonAsync<Asignatura>(Url, oAsignatura);
+            oRespuesta = response.Content.ReadFromJsonAsync<object>().Result;
+        }
+
+        Navigationmanager.NavigateTo("/asignaturas");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != 0)
+        {
+            oRespuestaAsignatura = await Http.GetFromJsonAsync<Asignatura>(Url + "/" + Id);
+            oAsignatura = oRespuestaAsignatura;
+        }
+
+        oProfesores = await Http.GetFromJsonAsync<IEnumerable<Profesor>>(UrlProfesores);
+    }
+
+    private void AsignarProfesor(int profesorId)
+    {
+        oAsignatura.ProfesorId = profesorId;
+    }
+}

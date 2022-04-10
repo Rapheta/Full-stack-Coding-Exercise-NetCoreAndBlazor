@@ -1,0 +1,137 @@
+﻿@page "/evaluacionForm"
+@page "/evaluacionForm/{Id:int}"
+
+@using Data;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient Http;
+@inject NavigationManager Navigationmanager;
+
+<h3><span class="oi oi-clipboard" aria-hidden="true"></span>&nbsp;&nbsp;Formulario de la Evaluación</h3>
+
+<EditForm Model="@oEvaluacion">
+    <div class="container-fluid mt-3">
+        @if (Id != 0)
+        {
+            <div class="form-group row mb-1">
+                <label class="col-sm-3">Alumno</label>
+                <div class="col-sm-9">
+                    <InputText class="form-control form-control-sm" disabled="true" @bind-Value="@oEvaluacion.Alumno"></InputText>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label class="col-sm-3">Asignatura</label>
+                <div class="col-sm-9">
+                    <InputText class="form-control form-control-sm" disabled="true" @bind-Value="@oEvaluacion.Asignatura"></InputText>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="form-group row mb-1">
+                <label class="col-sm-3">Alumno</label>
+                <div class="col-sm-9">
+                    <CustomInputSelect class="form-control form-control-sm" @onchange="(()=>AsignarAlumno(oEvaluacion.AlumnoId))" @bind-Value="@oEvaluacion.AlumnoId">
+                        <option value="0">-- Seleccione un alumno --</option>
+                        @foreach (var alumno in oAlumnos)
+                        {
+                            <option value="@alumno.Id">@String.Concat(@alumno.Nombre, " ", @alumno.Apellidos)</option>
+                        }
+                    </CustomInputSelect>
+                </div>
+            </div>
+
+            <div class="form-group row mb-1">
+                <label class="col-sm-3">Asignatura</label>
+                <div class="col-sm-9">
+                    <CustomInputSelect class="form-control form-control-sm" @onchange="(()=>AsignarAsignatura(oEvaluacion.AsignaturaId))" @bind-Value="@oEvaluacion.AsignaturaId">
+                        <option value="0">-- Seleccione una asignatura --</option>
+                        @foreach (var asignatura in oAsignaturas)
+                        {
+                            <option value="@asignatura.Id">@asignatura.Nombre</option>
+                        }
+                    </CustomInputSelect>
+                </div>
+            </div>
+        }
+
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Calificación</label>
+            <div class="col-sm-9">
+                <InputNumber class="form-control form-control-sm" @bind-Value="@oEvaluacion.Calificacion"></InputNumber>
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Comentarios</label>
+            <div class="col-sm-9">
+                <InputText class="form-control form-control-sm" @bind-Value="@oEvaluacion.Comentario"></InputText>
+            </div>
+        </div>
+        <div class="form-group row mb-1 mt-2">
+            <div class="col-sm-12">
+                <button class="btn btn-secondary btn-sm" @onclick="Cancel">Cancelar</button>
+                <button class="btn btn-success btn-sm" @onclick="Save">Guardar</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    Evaluacion oEvaluacion = new Evaluacion();
+    object oRespuesta = new object();
+    Evaluacion oRespuestaEvaluacion = new Evaluacion();
+    public string Url = "/Evaluacion/GetEvaluacion";
+
+
+    public IEnumerable<Alumno> oAlumnos = new List<Alumno>();
+    public string UrlAlumnos = "/Alumnos";
+
+    public IEnumerable<Asignatura> oAsignaturas = new List<Asignatura>();
+    public string UrlAsignaturas = "/Asignaturas";
+
+    private void Cancel() => Navigationmanager.NavigateTo("/evaluaciones");
+
+    private async Task Save()
+    {
+        Url = "/Evaluacion";
+        if (Id != 0)
+        {
+            var response = await Http.PutAsJsonAsync<Evaluacion>(Url, oEvaluacion);
+            oRespuesta = response.Content.ReadFromJsonAsync<object>().Result;
+        }
+        else
+        {
+            var response = await Http.PostAsJsonAsync<Evaluacion>(Url, oEvaluacion);
+            oRespuesta = response.Content.ReadFromJsonAsync<object>().Result;
+        }
+
+        Navigationmanager.NavigateTo("/evaluaciones");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != 0)
+        {
+            oRespuestaEvaluacion = await Http.GetFromJsonAsync<Evaluacion>(Url + "/" + Id);
+            oEvaluacion = oRespuestaEvaluacion;
+        }
+        else
+        {
+            oAlumnos = await Http.GetFromJsonAsync<IEnumerable<Alumno>>(UrlAlumnos);
+            oAsignaturas = await Http.GetFromJsonAsync<IEnumerable<Asignatura>>(UrlAsignaturas);
+        }
+    }
+
+    private void AsignarAlumno(int alumnoId)
+    {
+        oEvaluacion.AlumnoId = alumnoId;
+    }
+
+    private void AsignarAsignatura(int asignaturaId)
+    {
+        oEvaluacion.AsignaturaId = asignaturaId;
+    }
+}

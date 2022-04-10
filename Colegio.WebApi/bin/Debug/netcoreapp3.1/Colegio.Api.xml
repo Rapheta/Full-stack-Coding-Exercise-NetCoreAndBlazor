@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Colegio.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Colegio.Api.Controllers.AlumnosController.GetAlumnos">
+            <summary>
+                Retrieve all students
+            </summary>
+            <returns>List of all students</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AlumnosController.GetAlumno(System.Int32)">
+            <summary>
+                Retrieve a student by its identifier
+            </summary>
+            <returns>One specific student</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AlumnosController.CreateAlumno(Colegio.Core.Entities.Alumno)">
+            <summary>
+                Create a student
+            </summary>
+            <returns>Created student</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AlumnosController.DeleteAlumno(System.Int32)">
+            <summary>
+                Delete a student by its identifier
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AlumnosController.EditAlumno(Colegio.Core.Entities.Alumno)">
+            <summary>
+                Edit a student
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AsignaturasController.GetAsignaturas">
+            <summary>
+                Retrieve all subjects
+            </summary>
+            <returns>List of all subjects</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AsignaturasController.GetAsignatura(System.Int32)">
+            <summary>
+                Retrieve a subject by its identifier
+            </summary>
+            <returns>One specific subject</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AsignaturasController.Createasignatura(Colegio.Core.Entities.Asignatura)">
+            <summary>
+                Create a subject
+            </summary>
+            <returns>Created subject</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AsignaturasController.DeleteAsignatura(System.Int32)">
+            <summary>
+                Delete a subject by its identifier
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.AsignaturasController.EditAsignatura(Colegio.Core.Entities.Asignatura)">
+            <summary>
+                Edit a subject
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.EvaluacionController.GetEvaluaciones">
+            <summary>
+                Retrieve all qualifications
+            </summary>
+            <returns>List of all qualifications</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.EvaluacionController.GetEvaluaciones(System.Int32)">
+            <summary>
+                Retrieve all qualifications by a student
+            </summary>
+            <returns>List of all qualifications about a student</returns>
+            [HttpGet("int/{id:int}")]
+        </member>
+        <member name="M:Colegio.Api.Controllers.EvaluacionController.GetEvaluacion(System.Int32)">
+            <summary>
+                Retrieve a qualification by its identifier
+            </summary>
+            <returns>One specific student</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.EvaluacionController.CreateEvaluacion(Colegio.Core.Entities.Evaluacion)">
+            <summary>
+                Create a qualification
+            </summary>
+            <returns>Created qualification</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.EvaluacionController.DeleteEvaluacion(System.Int32)">
+            <summary>
+                Delete a qualification by its identifier
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.EvaluacionController.EditEvaluacion(Colegio.Core.Entities.Evaluacion)">
+            <summary>
+                Edit a qualification
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.ProfesoresController.GetProfesores">
+            <summary>
+                Retrieve all teachers
+            </summary>
+            <returns>List of all teachers</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.ProfesoresController.GetProfesor(System.Int32)">
+            <summary>
+                Retrieve a teacher by its identifier
+            </summary>
+            <returns>One specific teacher</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.ProfesoresController.CreateProfesor(Colegio.Core.Entities.Profesor)">
+            <summary>
+                Create a teacher
+            </summary>
+            <returns>Created teacher</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.ProfesoresController.DeleteProfesor(System.Int32)">
+            <summary>
+                Delete a teacher by its identifier
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Colegio.Api.Controllers.ProfesoresController.EditProfesor(Colegio.Core.Entities.Profesor)">
+            <summary>
+                Edit a teacher
+            </summary>
+            <returns>true / false</returns>
+        </member>
+    </members>
+</doc>

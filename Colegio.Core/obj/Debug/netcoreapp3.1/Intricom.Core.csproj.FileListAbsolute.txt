@@ -1,0 +1,17 @@
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\bin\Debug\netcoreapp3.1\Intricom.Core.deps.json
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\bin\Debug\netcoreapp3.1\Intricom.Core.dll
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\bin\Debug\netcoreapp3.1\Intricom.Core.pdb
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.AssemblyInfoInputs.cache
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.AssemblyInfo.cs
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.csproj.CoreCompileInputs.cache
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.dll
+C:\Users\Raphelet\source\repos\Intricom.WebApi\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.pdb
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\bin\Debug\netcoreapp3.1\Intricom.Core.deps.json
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\bin\Debug\netcoreapp3.1\Intricom.Core.dll
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\bin\Debug\netcoreapp3.1\Intricom.Core.pdb
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.csprojAssemblyReference.cache
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.AssemblyInfoInputs.cache
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.AssemblyInfo.cs
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.csproj.CoreCompileInputs.cache
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.dll
+D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Intricom.Core\obj\Debug\netcoreapp3.1\Intricom.Core.pdb

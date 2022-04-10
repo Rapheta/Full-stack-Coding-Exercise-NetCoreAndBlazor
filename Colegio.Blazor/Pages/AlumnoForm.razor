@@ -1,0 +1,74 @@
+﻿@page "/alumnoForm"
+@page "/alumnoForm/{Id:int}"
+
+@using Data
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject HttpClient Http
+@inject NavigationManager Navigationmanager;
+
+<h3><span class="oi oi-clipboard" aria-hidden="true"></span>&nbsp;&nbsp;Formulario del Alumno</h3>
+
+<EditForm Model="@oAlumno">
+    <div class="container-fluid mt-3">
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Nombre</label>
+            <div class="col-sm-9">
+                <InputText class="form-control form-control-sm" @bind-Value="@oAlumno.Nombre"></InputText>
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Apellidos</label>
+            <div class="col-sm-9">
+                <InputText class="form-control form-control-sm" @bind-Value="@oAlumno.Apellidos"></InputText>
+            </div>
+        </div>
+        <div class="form-group row mb-1">
+            <label class="col-sm-3">Curso</label>
+            <div class="col-sm-9">
+                <InputNumber class="form-control form-control-sm" @bind-Value="@oAlumno.Curso"></InputNumber>
+            </div>
+        </div>
+
+        <div class="form-group row mb-1 mt-2">
+            <div class="col-sm-12">
+                <button class="btn btn-success btn-sm" @onclick="Save">Guardar</button>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    Alumno oAlumno = new Alumno();
+    object oRespuesta = new object();
+    Alumno oRespuestaAlumno = new Alumno();
+    public string Url = "/Alumnos";
+
+    private async Task Save()
+    {
+        if (Id != 0)
+        {
+            var response = await Http.PutAsJsonAsync<Alumno>(Url, oAlumno);
+            oRespuesta = response.Content.ReadFromJsonAsync<object>().Result;
+        }
+        else
+        {
+            var response = await Http.PostAsJsonAsync<Alumno>(Url, oAlumno);
+            oRespuesta = response.Content.ReadFromJsonAsync<object>().Result;
+        }
+
+        Navigationmanager.NavigateTo("/alumnos");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id != 0)
+        {
+            oRespuestaAlumno = await Http.GetFromJsonAsync<Alumno>(Url + "/" + Id);
+            oAlumno = oRespuestaAlumno;
+        }
+    }
+}

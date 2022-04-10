@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Intricom.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Intricom.Api.Controllers.NotesController.GetNotes">
+            <summary>
+                Retrieve all notes
+            </summary>
+            <returns>List of all notes</returns>
+        </member>
+        <member name="M:Intricom.Api.Controllers.NotesController.GetNote(System.Int32)">
+            <summary>
+                Retrieve a note by its identifier
+            </summary>
+            <returns>One specific note</returns>
+        </member>
+        <member name="M:Intricom.Api.Controllers.NotesController.CreateNote(Intricom.Core.Entities.Note)">
+            <summary>
+                Create a note
+            </summary>
+            <returns>Created note</returns>
+        </member>
+        <member name="M:Intricom.Api.Controllers.NotesController.DeleteNote(System.Int32)">
+            <summary>
+                Delete a note by its identifier
+            </summary>
+            <returns>true / false</returns>
+        </member>
+        <member name="M:Intricom.Api.Controllers.NotesController.EditNote(Intricom.Core.Entities.Note)">
+            <summary>
+                Edit a note
+            </summary>
+            <returns>true / false</returns>
+        </member>
+    </members>
+</doc>
