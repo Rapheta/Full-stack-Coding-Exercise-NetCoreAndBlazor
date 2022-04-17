@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj",
       "projectName": "Colegio.Core",
-      "projectPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj",
+      "projectPath": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj",
       "packagesPath": "C:\\Users\\Raphelet\\.nuget\\packages\\",
-      "outputPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\obj\\",
+      "outputPath": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Raphelet\\AppData\\Roaming\\NuGet\\NuGet.Config",

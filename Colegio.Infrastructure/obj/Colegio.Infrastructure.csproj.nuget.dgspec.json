@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj": {}
+    "C:\\Users\\Raphelet\\Git\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj": {
+    "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj",
         "projectName": "Colegio.Core",
-        "projectPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj",
+        "projectPath": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj",
         "packagesPath": "C:\\Users\\Raphelet\\.nuget\\packages\\",
-        "outputPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\obj\\",
+        "outputPath": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Raphelet\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -58,14 +58,14 @@
         }
       }
     },
-    "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj": {
+    "C:\\Users\\Raphelet\\Git\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Raphelet\\Git\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj",
         "projectName": "Colegio.Infrastructure",
-        "projectPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Raphelet\\Git\\Colegio.Infrastructure\\Colegio.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Raphelet\\.nuget\\packages\\",
-        "outputPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Raphelet\\Git\\Colegio.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Raphelet\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,8 +82,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj": {
-                "projectPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Core\\Colegio.Core.csproj"
+              "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj": {
+                "projectPath": "C:\\Users\\Raphelet\\Git\\Colegio.Core\\Colegio.Core.csproj"
               }
             }
           }
@@ -102,6 +102,14 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.8, )"
@@ -111,6 +119,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.8, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

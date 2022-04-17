@@ -48,6 +48,8 @@ namespace Colegio.WebApi
             services.AddTransient<IEvaluacionService, EvaluacionService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
+            services.AddSingleton<IConfiguration>(Configuration);
+
             services.AddCors(options =>
             {
                 options.AddPolicy("ColegioPolicy",

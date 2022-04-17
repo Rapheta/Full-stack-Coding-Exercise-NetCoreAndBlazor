@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Blazor\\Colegio.Blazor.csproj": {}
+    "C:\\Users\\Raphelet\\Git\\Colegio.Blazor\\Colegio.Blazor.csproj": {}
   },
   "projects": {
-    "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Blazor\\Colegio.Blazor.csproj": {
+    "C:\\Users\\Raphelet\\Git\\Colegio.Blazor\\Colegio.Blazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Blazor\\Colegio.Blazor.csproj",
+        "projectUniqueName": "C:\\Users\\Raphelet\\Git\\Colegio.Blazor\\Colegio.Blazor.csproj",
         "projectName": "Colegio.Blazor",
-        "projectPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Blazor\\Colegio.Blazor.csproj",
+        "projectPath": "C:\\Users\\Raphelet\\Git\\Colegio.Blazor\\Colegio.Blazor.csproj",
         "packagesPath": "C:\\Users\\Raphelet\\.nuget\\packages\\",
-        "outputPath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Blazor\\obj\\",
+        "outputPath": "C:\\Users\\Raphelet\\Git\\Colegio.Blazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Raphelet\\AppData\\Roaming\\NuGet\\NuGet.Config",

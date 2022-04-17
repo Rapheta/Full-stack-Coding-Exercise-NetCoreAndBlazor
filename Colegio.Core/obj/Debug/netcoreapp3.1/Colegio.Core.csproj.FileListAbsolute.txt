@@ -16,3 +16,12 @@ D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Core\obj\D
 D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.csproj.CoreCompileInputs.cache
 D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.dll
 D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.pdb
+C:\Users\Raphelet\Git\Colegio.Core\bin\Debug\netcoreapp3.1\Colegio.Core.deps.json
+C:\Users\Raphelet\Git\Colegio.Core\bin\Debug\netcoreapp3.1\Colegio.Core.dll
+C:\Users\Raphelet\Git\Colegio.Core\bin\Debug\netcoreapp3.1\Colegio.Core.pdb
+C:\Users\Raphelet\Git\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.csprojAssemblyReference.cache
+C:\Users\Raphelet\Git\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.AssemblyInfoInputs.cache
+C:\Users\Raphelet\Git\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.AssemblyInfo.cs
+C:\Users\Raphelet\Git\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.csproj.CoreCompileInputs.cache
+C:\Users\Raphelet\Git\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.dll
+C:\Users\Raphelet\Git\Colegio.Core\obj\Debug\netcoreapp3.1\Colegio.Core.pdb

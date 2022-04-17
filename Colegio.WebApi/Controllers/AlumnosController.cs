@@ -3,6 +3,7 @@ using Colegio.Core.DTOs;
 using Colegio.Core.Entities;
 using Colegio.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

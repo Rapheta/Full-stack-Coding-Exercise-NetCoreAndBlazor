@@ -1,35 +1,46 @@
 ﻿using Colegio.Core.Entities;
 using Colegio.Core.Interfaces;
-using Colegio.Infrastructure.Data;
+using Dapper;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Serilog;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Colegio.Infrastructure.Repositories
 {
     public class AlumnosRepository : IAlumnosRepository
     {
-        private readonly BlazorCrudContext _context;
-
-        public AlumnosRepository(BlazorCrudContext context)
+        private readonly IConfiguration _configuration;
+        public AlumnosRepository(IConfiguration configuration)
         {
-            _context = context;
+            _configuration = configuration;
         }
 
         public async Task<IEnumerable<Alumno>> GetAlumnos()
         {
-            var alumnos = await _context.Alumno.ToListAsync();
+            var queryAlumnos = "SELECT * FROM alumno";
+            var alumnos = new List<Alumno>();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+            {
+                alumnos = (List<Alumno>)await connection.QueryAsync<Alumno>(queryAlumnos).ConfigureAwait(false);
+            }
+
             Log.Information("All the existing items have been retrieved successfully");
             return alumnos;
         }
 
         public async Task<Alumno> GetAlumno(int id)
         {
-            var alumno = await _context.Alumno.FirstOrDefaultAsync(n => n.Id == id);
+            var queryAlumno = "SELECT * FROM alumno WHERE id = @id";
+            var alumno = new Alumno();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+            {
+                alumno = await connection.QueryFirstAsync<Alumno>(queryAlumno, new { id = id });
+            }
 
-            if(alumno != null)
+            if (alumno != null)
             {
                 Log.Information("The item with id: '{id}' has been retrieved successfully", id);
                 return alumno;
@@ -39,14 +50,18 @@ namespace Colegio.Infrastructure.Repositories
                 Log.Error("The item with id: '{id}' has not been found in the database", id);
                 return new Alumno();
             }
-            
         }
 
 
         public async Task<Alumno> CreateAlumno(Alumno alumno)
         {
-            _context.Add(alumno);
-            _context.SaveChanges();
+            var queryInsertAlumno = @"INSERT INTO Alumno (nombre, apellidos, curso)
+                                    VALUES (@nombre, @apellidos, @curso)";
+
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+            {
+                await connection.ExecuteAsync(queryInsertAlumno, new { nombre = alumno.Nombre, apellidos = alumno.Apellidos, curso = alumno.Curso});
+            }
 
             Log.Information("A new item has been created successfully", alumno.Id);
 
@@ -55,12 +70,20 @@ namespace Colegio.Infrastructure.Repositories
 
         public async Task<bool> DeleteAlumno(int id)
         {
-            var alumno = _context.Alumno.FirstOrDefault(n => n.Id == id);
+            var queryAlumno = "SELECT * FROM alumno WHERE id = @id";
+            var alumno = new Alumno();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+            {
+                alumno = await connection.QueryFirstAsync<Alumno>(queryAlumno, new { id = id });
+            }
 
             if (alumno != null)
             {
-                _context.Remove(alumno);
-                _context.SaveChanges();
+                var queryDeleteAlumno = "DELETE FROM alumno WHERE id = @id";
+                using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+                {
+                    await connection.ExecuteAsync(queryDeleteAlumno, new { Id = id });
+                }
 
                 Log.Information("The item with id: '{id}' has been deleted successfully", id);
                 return true;
@@ -74,7 +97,12 @@ namespace Colegio.Infrastructure.Repositories
 
         public async Task<bool> EditAlumno(Alumno alumno)
         {
-            var editedAlumno = _context.Alumno.FirstOrDefault(n => n.Id == alumno.Id);
+            var queryAlumno = "SELECT * FROM alumno WHERE id = @id";
+            var editedAlumno = new Alumno();
+            using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+            {
+                editedAlumno = await connection.QueryFirstAsync<Alumno>(queryAlumno, new { id = alumno.Id });
+            }
 
             if (editedAlumno != null)
             {
@@ -82,7 +110,15 @@ namespace Colegio.Infrastructure.Repositories
                 editedAlumno.Apellidos = alumno.Apellidos;
                 editedAlumno.Curso = alumno.Curso;
                 //+ parameters
-                _context.SaveChanges();
+
+                var queryUpdateAlumno = @"UPDATE Alumno 
+                                        SET nombre = @nombre, apellidos = @apellidos, curso = @curso
+                                        WHERE id = @id";
+
+                using (var connection = new SqlConnection(_configuration.GetConnectionString("BlazorCrud")))
+                {
+                    await connection.ExecuteAsync(queryUpdateAlumno, new { nombre = alumno.Nombre, apellidos = alumno.Apellidos, curso = alumno.Curso, id = alumno.Id });
+                }
 
                 Log.Information("The item has been updated successfully");
                 return true;

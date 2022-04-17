@@ -1,43 +1,24 @@
 ﻿using Colegio.Core.Interfaces;
-using Colegio.Infrastructure.Data;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace Colegio.Infrastructure.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly BlazorCrudContext _context;
         private readonly IAlumnosRepository _alumnosRepository;
         private readonly IProfesoresRepository _profesoresRepository;
         private readonly IAsignaturasRepository _asignaturasRepository;
         private readonly IEvaluacionRepository _evaluacionRepository;
+        private readonly IConfiguration _configuration;
 
-        public UnitOfWork(BlazorCrudContext context)
+        public UnitOfWork(IConfiguration configuration)
         {
-            _context = context;
+            _configuration = configuration;
         }
 
-        public IAlumnosRepository AlumnosRepository => _alumnosRepository ?? new AlumnosRepository(_context);
-        public IProfesoresRepository ProfesoresRepository => _profesoresRepository ?? new ProfesoresRepository(_context);
-        public IAsignaturasRepository AsignaturasRepository => _asignaturasRepository ?? new AsignaturasRepository(_context);
-        public IEvaluacionRepository EvaluacionRepository => _evaluacionRepository ?? new EvaluacionRepository(_context);
-
-        public void Dispose()
-        {
-            if (_context != null)
-            {
-                _context.Dispose();
-            }
-        }
-
-        public void SaveChanges()
-        {
-            _context.SaveChanges();
-        }
-
-        public async Task SaveChangesAsync()
-        {
-            await _context.SaveChangesAsync();
-        }
+        public IAlumnosRepository AlumnosRepository => _alumnosRepository ?? new AlumnosRepository(_configuration);
+        public IProfesoresRepository ProfesoresRepository => _profesoresRepository ?? new ProfesoresRepository(_configuration);
+        public IAsignaturasRepository AsignaturasRepository => _asignaturasRepository ?? new AsignaturasRepository(_configuration);
+        public IEvaluacionRepository EvaluacionRepository => _evaluacionRepository ?? new EvaluacionRepository(_configuration);
     }
 }

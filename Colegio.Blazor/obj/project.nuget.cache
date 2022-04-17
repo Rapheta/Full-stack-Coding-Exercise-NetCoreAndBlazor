@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bxlg+QCroUC8bvYnXh/PMwnYSbZjYTljrFRI8PrCvLhJWUJiozeCpo/k6tGMZY2X2uedc041k5c8SdNAklJSOg==",
+  "dgSpecHash": "2pVWyUhgQ/4RB2GSNToI0Ky1RE1EdlThh5Prwf71jCtayhmgZAmJscvTBmGWr9XldbarHhnNFLhfwxs4Cwif4Q==",
   "success": true,
-  "projectFilePath": "D:\\TRABAJO\\PRUEBAS Y EJERCICIOS\\Colegio - Ejercicio FullStack\\Colegio.Blazor\\Colegio.Blazor.csproj",
+  "projectFilePath": "C:\\Users\\Raphelet\\Git\\Colegio.Blazor\\Colegio.Blazor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Raphelet\\.nuget\\packages\\system.net.http.json\\5.0.0-preview.3.20214.6\\system.net.http.json.5.0.0-preview.3.20214.6.nupkg.sha512",
     "C:\\Users\\Raphelet\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0-preview.3.20214.6\\system.runtime.compilerservices.unsafe.5.0.0-preview.3.20214.6.nupkg.sha512",

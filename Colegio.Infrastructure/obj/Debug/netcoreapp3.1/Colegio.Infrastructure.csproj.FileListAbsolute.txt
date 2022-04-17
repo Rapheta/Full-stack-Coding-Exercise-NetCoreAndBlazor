@@ -28,3 +28,18 @@ D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Infrastruc
 D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.dll
 D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.pdb
 D:\TRABAJO\PRUEBAS Y EJERCICIOS\Colegio - Ejercicio FullStack\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.genruntimeconfig.cache
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.AssemblyInfo.cs
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Infrastructure.deps.json
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Infrastructure.runtimeconfig.json
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Infrastructure.runtimeconfig.dev.json
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Infrastructure.dll
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Infrastructure.pdb
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Core.dll
+C:\Users\Raphelet\Git\Colegio.Infrastructure\bin\Debug\netcoreapp3.1\Colegio.Core.pdb
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.csproj.CopyComplete
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.dll
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.pdb
+C:\Users\Raphelet\Git\Colegio.Infrastructure\obj\Debug\netcoreapp3.1\Colegio.Infrastructure.genruntimeconfig.cache
