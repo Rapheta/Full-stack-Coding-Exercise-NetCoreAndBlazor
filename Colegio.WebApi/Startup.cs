@@ -1,6 +1,5 @@
 using Colegio.Core.Interfaces;
 using Colegio.Core.Services;
-using Colegio.Infrastructure.Data;
 using Colegio.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,9 +33,10 @@ namespace Colegio.WebApi
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
 
-            services.AddDbContext<BlazorCrudContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("BlazorCrud"))
-            );
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379";
+            });
 
             services.AddTransient<IAlumnosRepository, AlumnosRepository>();
             services.AddTransient<IAlumnosService, AlumnosService>();

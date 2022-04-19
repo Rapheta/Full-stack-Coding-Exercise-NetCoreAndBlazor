@@ -184,3 +184,8 @@ C:\Users\Raphelet\Git\Colegio.WebApi\obj\Debug\netcoreapp3.1\Colegio.Api.pdb
 C:\Users\Raphelet\Git\Colegio.WebApi\obj\Debug\netcoreapp3.1\Colegio.Api.genruntimeconfig.cache
 C:\Users\Raphelet\Git\Colegio.WebApi\obj\Debug\netcoreapp3.1\Colegio.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Raphelet\Git\Colegio.WebApi\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Raphelet\Git\Colegio.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+C:\Users\Raphelet\Git\Colegio.WebApi\bin\Debug\netcoreapp3.1\Pipelines.Sockets.Unofficial.dll
+C:\Users\Raphelet\Git\Colegio.WebApi\bin\Debug\netcoreapp3.1\StackExchange.Redis.dll
+C:\Users\Raphelet\Git\Colegio.WebApi\bin\Debug\netcoreapp3.1\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Raphelet\Git\Colegio.WebApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
